@@ -11,15 +11,18 @@ import UIKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        
+//        D48CB4 (rosa)
+//        222131 (negro)
+//        C97AA7 (rosa)
+//        5F4E96 (morado 1)
+//        383D87
+//        A3699F
+//        95537B
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

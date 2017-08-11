@@ -1,0 +1,14 @@
+
+<svg width="309px" height="214px" viewBox="0 0 309 214" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="cloud" fill="#FFFFFF">
+            <ellipse id="Oval" fill-opacity="0.2" cx="96.5" cy="80.5722656" rx="82.5" ry="80.5722656"></ellipse>
+            <ellipse id="Oval" fill-opacity="0.5" cx="96.625" cy="80.8579102" rx="75.625" ry="73.8579102"></ellipse>
+            <ellipse id="Oval" fill-opacity="0.7" cx="97" cy="78.7148437" rx="55" ry="53.7148437"></ellipse>
+            <path d="M49.8710937,213.054687 L249.773437,213.144531 C249.773437,213.144531 309,213.054687 309,152.9375 C309,92.8203125 250.839844,92.1523437 250.839844,92.1523437 L231.742187,92.3203125 C231.742187,92.3203125 219.707031,52 154.5,52 C89.2929687,52 69,112 69,112 L49.8710937,112 C49.8710937,112 1.13638265e-13,113.898438 0,161.9375 C-1.08545985e-13,209.976562 49.8710937,213.054687 49.8710937,213.054687 Z" id="Path-2"></path>
+        </g>
+    </g>
+</svg>
