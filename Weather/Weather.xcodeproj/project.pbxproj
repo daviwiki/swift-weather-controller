@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4697634B1F3DB205008D45CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697634A1F3DB205008D45CF /* AppDelegate.swift */; };
-		4697634D1F3DB205008D45CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697634C1F3DB205008D45CF /* ViewController.swift */; };
 		469763501F3DB205008D45CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4697634E1F3DB205008D45CF /* Main.storyboard */; };
 		469763521F3DB205008D45CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469763511F3DB205008D45CF /* Assets.xcassets */; };
 		469763551F3DB205008D45CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469763531F3DB205008D45CF /* LaunchScreen.storyboard */; };
@@ -26,7 +25,6 @@
 		1598B18D8CE92BF21EE4DEC8 /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		469763471F3DB205008D45CF /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4697634A1F3DB205008D45CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4697634C1F3DB205008D45CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4697634F1F3DB205008D45CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		469763511F3DB205008D45CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		469763541F3DB205008D45CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				469763631F3DB96A008D45CF /* Weather */,
 				4697635C1F3DB54B008D45CF /* Resoruces */,
 				4697634A1F3DB205008D45CF /* AppDelegate.swift */,
-				4697634C1F3DB205008D45CF /* ViewController.swift */,
 				4697634E1F3DB205008D45CF /* Main.storyboard */,
 				469763511F3DB205008D45CF /* Assets.xcassets */,
 				469763531F3DB205008D45CF /* LaunchScreen.storyboard */,
@@ -240,11 +237,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Weather/Pods-Weather-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 			);
@@ -260,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4697634D1F3DB205008D45CF /* ViewController.swift in Sources */,
 				469763671F3DC1AD008D45CF /* WeatherPresenter.swift in Sources */,
 				4697634B1F3DB205008D45CF /* AppDelegate.swift in Sources */,
 				4697636D1F3DC5E4008D45CF /* WeatherConfigurator.swift in Sources */,

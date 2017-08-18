@@ -6,6 +6,7 @@ target 'Weather' do
   use_frameworks!
 
   # Pods for Weather
-  pod "Macaw", "0.8.2"
+  pod 'Macaw', '0.8.2'
+  pod 'DynamicColor', '~> 3.3'
 
 end

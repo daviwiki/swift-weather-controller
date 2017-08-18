@@ -5,8 +5,8 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="sun" fill="#FFFFFF">
-            <circle id="Oval" fill-opacity="0.2" cx="60" cy="60" r="60"></circle>
-            <circle id="Oval" fill-opacity="0.5" cx="60" cy="60" r="55"></circle>
+            <circle id="Oval" fill-opacity="0.1" cx="60" cy="60" r="60"></circle>
+            <circle id="Oval" fill-opacity="0.3" cx="60" cy="60" r="53"></circle>
             <circle id="Oval" cx="60" cy="59" r="40"></circle>
         </g>
     </g>
