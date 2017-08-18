@@ -130,6 +130,9 @@ extension WeatherController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weathercell", for: indexPath)
+        if let cell = cell as? WeatherCell, let hour = weather?.items[indexPath.row] {
+            cell.show(weather: hour)
+        }
         return cell
     }
     

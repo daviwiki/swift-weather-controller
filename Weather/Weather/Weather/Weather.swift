@@ -23,6 +23,7 @@ struct Weather {
         
         struct WeatherHourItem {
             
+            let isFirst: Bool
             let hour: String
             let iconName: String
             let status: String

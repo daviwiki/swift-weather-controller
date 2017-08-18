@@ -35,18 +35,21 @@ extension WeatherPresenter {
     
     fileprivate func getFake() -> Weather.ViewModel {
         var items: [Weather.ViewModel.WeatherHourItem] = []
-        
-        let item = Weather.ViewModel.WeatherHourItem(hour: "20:00",
+                
+        let item = Weather.ViewModel.WeatherHourItem(isFirst: true,
+                                                     hour: "20:00",
                                                      iconName: "sun",
                                                      status: "Soleado",
                                                      temperature: "21ºC",
                                                      sentence: "Una tarde perfecta para ir a la playa")
-        let item2 = Weather.ViewModel.WeatherHourItem(hour: "21:00",
+        let item2 = Weather.ViewModel.WeatherHourItem(isFirst: false,
+                                                      hour: "21:00",
                                                       iconName: "sun",
                                                       status: "Soleado",
                                                       temperature: "20ºC",
                                                       sentence: "Aprovecha estas últimas horas del día")
-        let item3 = Weather.ViewModel.WeatherHourItem(hour: "22:12",
+        let item3 = Weather.ViewModel.WeatherHourItem(isFirst: false,
+                                                      hour: "22:12",
                                                       iconName: "nightfall",
                                                       status: "Anochece",
                                                       temperature: "18ºC",
