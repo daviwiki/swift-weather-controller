@@ -8,6 +8,7 @@
 
 import UIKit
 import DynamicColor
+import Macaw
 
 protocol WeatherControllerInput: NSObjectProtocol {
     
@@ -26,17 +27,22 @@ class WeatherController: UIViewController, WeatherControllerInput {
     
     var output: WeatherControllerOutput!
     
+    @IBOutlet weak var mainIconView: SVGView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherStatusLabel: UILabel!
     @IBOutlet weak var conditionsLabel: UILabel!
     @IBOutlet weak var hoursTableView: UITableView!
+    @IBOutlet weak var tempBubbleView: UIView!
     
     fileprivate var gradientLayer: CAGradientLayer?
     fileprivate var weather: Weather.ViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tempBubbleView.layer.cornerRadius = tempBubbleView.frame.size.width / 2.0
+        tempBubbleView.clipsToBounds = true
         
         hoursTableView.estimatedRowHeight = 92
         hoursTableView.rowHeight = UITableViewAutomaticDimension
@@ -83,6 +89,9 @@ extension WeatherController {
     
     private func dark() {
         
+        // Main icon
+        mainIconView.fileName = "moon"
+        
         // Gradient
         let startColor = UIColor(hexString: "383D87")
         let midColor = UIColor(hexString: "5F4E96")
@@ -97,6 +106,9 @@ extension WeatherController {
     
     private func light() {
         
+        // Main icon
+        mainIconView.fileName = "sun"
+        
         // Gradient
         let startColor = UIColor(hexString: "D48CB4")
         let midColor = UIColor(hexString: "5F4E96")
@@ -108,13 +120,6 @@ extension WeatherController {
         // Titles
         locationLabel.textColor = startColor.darkened()
         
-        //        D48CB4 (rosa)
-        //        222131 (negro)
-        //        C97AA7 (rosa)
-        //        5F4E96 (morado 1)
-        //        383D87 (morado 2 - dark)
-        //        A3699F (rosa 2 - dark)
-        //        95537B (rosa 3 - dark+)
     }
 }
 
