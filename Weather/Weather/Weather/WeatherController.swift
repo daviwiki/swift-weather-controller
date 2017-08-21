@@ -142,3 +142,44 @@ extension WeatherController: UITableViewDataSource {
     }
     
 }
+
+extension WeatherController: UIScrollViewDelegate {
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        let visibleCells = hoursTableView.visibleCells
+        for cell in visibleCells {
+            applyScrollTransform(cell: cell, at: hoursTableView.contentOffset)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let visibleCells = hoursTableView.visibleCells
+        for cell in visibleCells {
+            applyScrollTransform(cell: cell, at: hoursTableView.contentOffset)
+        }
+    }
+    
+    private func applyScrollTransform(cell: UITableViewCell, at offset: CGPoint) {
+        
+        let y = offset.y
+        let h = hoursTableView.frame.height
+        let cellY = cell.frame.origin.y
+        let cellH = cell.frame.height
+        
+        if y > cellY {
+            // up cell
+            
+        } else if cellY > y + h - cellH {
+            // down cell
+            
+            let percent = (y + h - cellY) / cellH
+            cell.contentView.alpha = percent
+            
+            if let cell = cell as? WeatherCell {
+                cell.iconView.transform = CGAffineTransform(scaleX: percent, y: percent)
+            }
+        }
+    }
+}

@@ -26,7 +26,6 @@ class WeatherCell: UITableViewCell {
         statusLabel.text = weather.status
         temperatureLabel.text = weather.temperature
         sentenceLabel.text = weather.sentence
-        
     }
     
     private func configure(weather: Weather.ViewModel.WeatherHourItem) {
@@ -43,7 +42,7 @@ class WeatherCell: UITableViewCell {
         super.prepareForReuse()
         
         hourLabel.text = nil
-        iconView.fileName = nil
+//        iconView.fileName = nil
         statusLabel.text = nil
         temperatureLabel.text = nil
         sentenceLabel.text = nil
