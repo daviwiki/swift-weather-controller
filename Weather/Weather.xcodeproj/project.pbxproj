@@ -170,7 +170,6 @@
 				TargetAttributes = {
 					469763461F3DB205008D45CF = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = LTWTR6D3HJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -404,10 +403,10 @@
 			baseConfigurationReference = 1598B18D8CE92BF21EE4DEC8 /* Pods-Weather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LTWTR6D3HJ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitban.test.w;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atenea.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -418,10 +417,10 @@
 			baseConfigurationReference = 85CCE728287C038A0DC0D023 /* Pods-Weather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LTWTR6D3HJ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitban.test.w;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atenea.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

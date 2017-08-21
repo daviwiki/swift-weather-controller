@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -96,24 +95,24 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m4y-4j-EHW">
-                                <rect key="frame" x="32" y="220.5" width="311" height="414.5"/>
+                                <rect key="frame" x="0.0" y="220.5" width="375" height="414.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weathercell" id="sDL-eO-cDP" customClass="WeatherCell" customModule="Weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="311" height="120"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sDL-eO-cDP" id="j03-Mx-C4M">
-                                            <rect key="frame" x="0.0" y="0.0" width="311" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqa-mu-auH" userLabel="Label - hour">
-                                                    <rect key="frame" x="6.5" y="24.5" width="43.5" height="19.5"/>
+                                                    <rect key="frame" x="38.5" y="24.5" width="43.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Fvt-gc-tCi" userLabel="View - icon" customClass="SVGView" customModule="Macaw">
-                                                    <rect key="frame" x="66" y="16" width="36" height="36"/>
+                                                    <rect key="frame" x="98" y="16" width="36" height="36"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="36" id="030-O9-0qO"/>
@@ -121,7 +120,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGp-92-SBh" userLabel="View - text container">
-                                                    <rect key="frame" x="118" y="16" width="193" height="103.5"/>
+                                                    <rect key="frame" x="150" y="16" width="193" height="103.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWE-zf-3oc" userLabel="Label - status">
                                                             <rect key="frame" x="0.0" y="8" width="193" height="21"/>
@@ -163,8 +162,8 @@
                                                 <constraint firstAttribute="bottom" secondItem="TGp-92-SBh" secondAttribute="bottom" id="KxQ-Er-9Kp"/>
                                                 <constraint firstItem="TGp-92-SBh" firstAttribute="top" secondItem="Fvt-gc-tCi" secondAttribute="top" id="OAK-up-BJw"/>
                                                 <constraint firstItem="Pqa-mu-auH" firstAttribute="centerY" secondItem="Fvt-gc-tCi" secondAttribute="centerY" id="TwX-BK-6BR"/>
-                                                <constraint firstAttribute="trailing" secondItem="TGp-92-SBh" secondAttribute="trailing" id="uw8-or-dL4"/>
-                                                <constraint firstItem="Fvt-gc-tCi" firstAttribute="leading" secondItem="j03-Mx-C4M" secondAttribute="leadingMargin" constant="58" id="wFE-c6-41S"/>
+                                                <constraint firstItem="Fvt-gc-tCi" firstAttribute="leading" secondItem="j03-Mx-C4M" secondAttribute="leading" constant="98" id="hT2-XW-q93"/>
+                                                <constraint firstAttribute="trailing" secondItem="TGp-92-SBh" secondAttribute="trailing" constant="32" id="uw8-or-dL4"/>
                                                 <constraint firstItem="Fvt-gc-tCi" firstAttribute="leading" secondItem="Pqa-mu-auH" secondAttribute="trailing" constant="16" id="yb5-mC-EeO"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -192,12 +191,12 @@
                             <constraint firstItem="d3P-m3-HuL" firstAttribute="top" secondItem="U9d-hs-LLe" secondAttribute="bottom" constant="-40" id="abV-aZ-c0h"/>
                             <constraint firstItem="nyN-M1-luM" firstAttribute="top" secondItem="nPK-RT-r0P" secondAttribute="bottom" constant="32" id="dPB-ee-Wjx"/>
                             <constraint firstAttribute="trailing" secondItem="nyN-M1-luM" secondAttribute="trailing" constant="32" id="dze-5C-HrM"/>
-                            <constraint firstItem="m4y-4j-EHW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="eQv-yo-2CK"/>
+                            <constraint firstItem="m4y-4j-EHW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eQv-yo-2CK"/>
                             <constraint firstItem="d3P-m3-HuL" firstAttribute="bottom" secondItem="m4y-4j-EHW" secondAttribute="bottom" id="fuG-Zi-OM0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d3P-m3-HuL" secondAttribute="bottom" constant="32" id="gRd-8A-gFr"/>
                             <constraint firstItem="nPK-RT-r0P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="gW1-hs-iQh"/>
                             <constraint firstItem="nPK-RT-r0P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="to7-yY-jEH"/>
-                            <constraint firstAttribute="trailing" secondItem="m4y-4j-EHW" secondAttribute="trailing" constant="32" id="vp2-dw-WPI"/>
+                            <constraint firstAttribute="trailing" secondItem="m4y-4j-EHW" secondAttribute="trailing" id="vp2-dw-WPI"/>
                             <constraint firstItem="nyN-M1-luM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="y4k-MK-1fz"/>
                         </constraints>
                     </view>
