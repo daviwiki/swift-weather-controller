@@ -57,13 +57,13 @@ extension WeatherPresenter {
         let item4 = Weather.ViewModel.WeatherHourItem(isFirst: false,
                                                       hour: "23:00",
                                                       iconName: "moon_cloudy",
-                                                      status: "Anochece",
+                                                      status: "Algunas nubes",
                                                       temperature: "14ºC",
                                                       sentence: "Va a refrescar ... ¡Abrigate bien!")
         let item5 = Weather.ViewModel.WeatherHourItem(isFirst: false,
                                                       hour: "00:00",
                                                       iconName: "moon",
-                                                      status: "Anochece",
+                                                      status: "Despejado",
                                                       temperature: "15ºC",
                                                       sentence: "Noche de perseidas, ¡Sal a admirar el cielo!")
         

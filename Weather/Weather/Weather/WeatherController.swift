@@ -180,6 +180,11 @@ extension WeatherController: UIScrollViewDelegate {
             if let cell = cell as? WeatherCell {
                 cell.iconView.transform = CGAffineTransform(scaleX: percent, y: percent)
             }
+        } else {
+            cell.contentView.alpha = 1.0
+            if let cell = cell as? WeatherCell {
+                cell.iconView.transform = CGAffineTransform.identity
+            }
         }
     }
 }
