@@ -38,6 +38,9 @@ class WeatherController: UIViewController, WeatherControllerInput {
     fileprivate var gradientLayer: CAGradientLayer?
     fileprivate var weather: Weather.ViewModel?
     
+    @IBOutlet weak var tableViewToTopOfConstraint: NSLayoutConstraint!
+    fileprivate var tableViewTopInset: CGFloat = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,8 +50,16 @@ class WeatherController: UIViewController, WeatherControllerInput {
         hoursTableView.estimatedRowHeight = 92
         hoursTableView.rowHeight = UITableViewAutomaticDimension
         
+        tableViewTopInset = abs(tableViewToTopOfConstraint.constant)
+        hoursTableView.contentInset = UIEdgeInsets(top: tableViewTopInset, left: 0.0, bottom: 0.0, right: 0.0)
+        
         let request = Weather.Request()
         output.loadWeather(request: request)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
     }
     
     func showWeather(weather: Weather.ViewModel) {
@@ -163,22 +174,33 @@ extension WeatherController: UIScrollViewDelegate {
     
     private func applyScrollTransform(cell: UITableViewCell, at offset: CGPoint) {
         
+        // TODO: Maybe the following must be included for each cell. Think about it
+        // in the future
+        
         let y = offset.y
         let h = hoursTableView.frame.height
         let cellY = cell.frame.origin.y
         let cellH = cell.frame.height
         
-        if y > cellY {
+        if y + tableViewTopInset > cellY {
             // up cell
+            
+            let percentVisible = 1.0 - ((y + tableViewTopInset - cellY) / cellH)
+            cell.contentView.alpha = pow(percentVisible, 2.5)
+            
+            
+            if let cell = cell as? WeatherCell {
+                cell.iconView.transform = CGAffineTransform(scaleX: percentVisible, y: percentVisible)
+            }
             
         } else if cellY > y + h - cellH {
             // down cell
             
-            let percent = (y + h - cellY) / cellH
-            cell.contentView.alpha = percent
+            let percentVisible = (y + h - cellY) / cellH
+            cell.contentView.alpha = percentVisible
             
             if let cell = cell as? WeatherCell {
-                cell.iconView.transform = CGAffineTransform(scaleX: percent, y: percent)
+                cell.iconView.transform = CGAffineTransform(scaleX: percentVisible, y: percentVisible)
             }
         } else {
             cell.contentView.alpha = 1.0
