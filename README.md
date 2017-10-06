@@ -47,6 +47,8 @@ with these new ones:
 ```
 This code implements the parse of the svg into a secondary thread to improve UI performance
 
+**IMPORTANT**: We detect a crash when we execute this perform at iPhoneX with iOs 11 so avoid to use it until we find the reason for this crash :).
+
 ## Thanks
 
 Special thanks to [Javi Pérez](https://dribbble.com/shots/1718042-Weather-App) for it mobile inspiration design
