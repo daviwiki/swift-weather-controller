@@ -134,6 +134,16 @@ extension WeatherController {
     }
 }
 
+extension WeatherController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? OnScroll {
+            cell.onScrollTo(offset: tableView.contentOffset, intoDisplay: hoursTableView.frame, inset: hoursTableView.contentInset)
+        }
+    }
+    
+}
+
 extension WeatherController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
