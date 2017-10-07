@@ -173,40 +173,8 @@ extension WeatherController: UIScrollViewDelegate {
     }
     
     private func applyScrollTransform(cell: UITableViewCell, at offset: CGPoint) {
-        
-        // TODO: Maybe the following must be included for each cell. Think about it
-        // in the future
-        
-        let y = offset.y
-        let h = hoursTableView.frame.height
-        let cellY = cell.frame.origin.y
-        let cellH = cell.frame.height
-        
-        if y + tableViewTopInset > cellY {
-            // up cell
-            
-            let percentVisible = 1.0 - ((y + tableViewTopInset - cellY) / cellH)
-            cell.contentView.alpha = pow(percentVisible, 2.5)
-            
-            
-            if let cell = cell as? WeatherCell {
-                cell.iconView.transform = CGAffineTransform(scaleX: percentVisible, y: percentVisible)
-            }
-            
-        } else if cellY > y + h - cellH {
-            // down cell
-            
-            let percentVisible = (y + h - cellY) / cellH
-            cell.contentView.alpha = percentVisible
-            
-            if let cell = cell as? WeatherCell {
-                cell.iconView.transform = CGAffineTransform(scaleX: percentVisible, y: percentVisible)
-            }
-        } else {
-            cell.contentView.alpha = 1.0
-            if let cell = cell as? WeatherCell {
-                cell.iconView.transform = CGAffineTransform.identity
-            }
+        if let cell = cell as? OnScroll {
+            cell.onScrollTo(offset: offset, intoDisplay: hoursTableView.frame, inset: hoursTableView.contentInset)
         }
     }
 }
