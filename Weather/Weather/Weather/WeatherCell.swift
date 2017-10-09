@@ -11,7 +11,7 @@ import Macaw
 
 class WeatherCell: UITableViewCell {
     
-    fileprivate let animationDuration: TimeInterval = 0.15
+    fileprivate let animationDuration: TimeInterval = 0.25
     fileprivate let animationCurve = UIViewAnimationCurve.easeInOut
     
     @IBOutlet weak var hourLabel: UILabel!
@@ -163,11 +163,11 @@ extension WeatherCell {
         
         guard view.transform != CGAffineTransform.identity else { return }
         
-        let animation = UIViewPropertyAnimator(duration: animationDuration, curve: animationCurve, animations: {
+        let animation = UIViewPropertyAnimator(duration: animationDuration, dampingRatio: 0.8) {
             view.alpha = 1.0
             view.transform = CGAffineTransform.identity
-        })
-        
+        }
+                
         animation.startAnimation()
     }
     
