@@ -137,8 +137,12 @@ extension WeatherController {
 extension WeatherController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if let cell = cell as? OnScroll {
+//            cell.onScrollTo(offset: tableView.contentOffset, intoDisplay: hoursTableView.frame, inset: hoursTableView.contentInset)
+//        }
+        
         if let cell = cell as? OnScroll {
-            cell.onScrollTo(offset: tableView.contentOffset, intoDisplay: hoursTableView.frame, inset: hoursTableView.contentInset)
+            cell.willDisplay(offset: tableView.contentOffset, intoDisplay: tableView.frame, inset: tableView.contentInset)
         }
     }
     
@@ -165,26 +169,29 @@ extension WeatherController: UITableViewDataSource {
 }
 
 extension WeatherController: UIScrollViewDelegate {
-    
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-        let visibleCells = hoursTableView.visibleCells
-        for cell in visibleCells {
-            applyScrollTransform(cell: cell, at: hoursTableView.contentOffset)
-        }
+        applyScrollTransform(at: scrollView.contentOffset)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let visibleCells = hoursTableView.visibleCells
-        for cell in visibleCells {
-            applyScrollTransform(cell: cell, at: hoursTableView.contentOffset)
-        }
+        applyScrollTransform(at: scrollView.contentOffset)
     }
     
-    private func applyScrollTransform(cell: UITableViewCell, at offset: CGPoint) {
-        if let cell = cell as? OnScroll {
-            cell.onScrollTo(offset: offset, intoDisplay: hoursTableView.frame, inset: hoursTableView.contentInset)
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        applyScrollTransform(at: scrollView.contentOffset)
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        applyScrollTransform(at: targetContentOffset.pointee)
+    }
+    
+    private func applyScrollTransform(at offset: CGPoint) {
+        let visibleCells = hoursTableView.visibleCells
+        for cell in visibleCells {
+            if let cell = cell as? OnScroll {
+                cell.onScrollTo(offset: offset, intoDisplay: hoursTableView.frame, inset: hoursTableView.contentInset)
+            }
         }
     }
 }
