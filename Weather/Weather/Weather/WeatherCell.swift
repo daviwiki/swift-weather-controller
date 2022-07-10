@@ -23,11 +23,10 @@ class WeatherCell: UITableViewCell {
     }
     
     private func configure(weather: Weather.ViewModel.WeatherHourItem) {
-        if weather.isFirst {
-            hourLabel.textColor = UIColor.white
-        } else {
-            hourLabel.textColor = UIColor.white.withAlphaComponent(0.5)
-        }
+        let colorName = weather.isFirst ?
+            Constants.ColorNames.primaryTextColor :
+            Constants.ColorNames.secondaryTextColor
+        hourLabel.textColor = colorName.color
     }
     
     override func prepareForReuse() {
@@ -43,8 +42,8 @@ class WeatherCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        temperatureLabel.textColor = UIColor.white.withAlphaComponent(0.5)
-        sentenceLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+        temperatureLabel.textColor = Constants.ColorNames.secondaryTextColor.color
+        sentenceLabel.textColor = Constants.ColorNames.secondaryTextColor.color
     }
 }
 

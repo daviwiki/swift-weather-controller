@@ -5,7 +5,6 @@ platform :ios, '13.0'
 target 'Weather' do
   use_frameworks!
   pod 'Macaw', '0.9.10'
-	pod 'DynamicColor'
 end
 
 post_install do |installer|

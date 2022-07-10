@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4658387C287AD627003B75F7 /* GetWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658387B287AD627003B75F7 /* GetWeather.swift */; };
+		4658387E287ADC80003B75F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4658387D287ADC80003B75F7 /* Localizable.strings */; };
+		46583881287AE0C4003B75F7 /* String+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46583880287AE0C4003B75F7 /* String+Color.swift */; };
+		46583883287AE1C2003B75F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46583882287AE1C2003B75F7 /* Constants.swift */; };
+		46583885287AE45D003B75F7 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46583884287AE45D003B75F7 /* UIColor+Utils.swift */; };
 		465B1EB61F4759AA00A3A7EF /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465B1EB51F4759AA00A3A7EF /* WeatherCell.swift */; };
 		465E30001F489FC200019605 /* sunrise.svg in Resources */ = {isa = PBXBuildFile; fileRef = 465E2FFF1F489FC200019605 /* sunrise.svg */; };
 		465E30021F489FF600019605 /* moon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 465E30011F489FF600019605 /* moon.svg */; };
@@ -29,6 +33,10 @@
 /* Begin PBXFileReference section */
 		1598B18D8CE92BF21EE4DEC8 /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		4658387B287AD627003B75F7 /* GetWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeather.swift; sourceTree = "<group>"; };
+		4658387D287ADC80003B75F7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		46583880287AE0C4003B75F7 /* String+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Color.swift"; sourceTree = "<group>"; };
+		46583882287AE1C2003B75F7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		46583884287AE45D003B75F7 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		465B1EB51F4759AA00A3A7EF /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		465E2FFF1F489FC200019605 /* sunrise.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sunrise.svg; sourceTree = "<group>"; };
 		465E30011F489FF600019605 /* moon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moon.svg; sourceTree = "<group>"; };
@@ -62,6 +70,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4658387F287AE0B5003B75F7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				46583882287AE1C2003B75F7 /* Constants.swift */,
+				46583880287AE0C4003B75F7 /* String+Color.swift */,
+				46583884287AE45D003B75F7 /* UIColor+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		4697633E1F3DB205008D45CF = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +101,11 @@
 		469763491F3DB205008D45CF /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				4658387F287AE0B5003B75F7 /* Utils */,
 				469763631F3DB96A008D45CF /* Weather */,
 				4697635C1F3DB54B008D45CF /* Resoruces */,
 				4697634A1F3DB205008D45CF /* AppDelegate.swift */,
 				4697634E1F3DB205008D45CF /* Main.storyboard */,
-				469763511F3DB205008D45CF /* Assets.xcassets */,
 				469763531F3DB205008D45CF /* LaunchScreen.storyboard */,
 				469763561F3DB205008D45CF /* Info.plist */,
 			);
@@ -97,6 +115,8 @@
 		4697635C1F3DB54B008D45CF /* Resoruces */ = {
 			isa = PBXGroup;
 			children = (
+				469763511F3DB205008D45CF /* Assets.xcassets */,
+				4658387D287ADC80003B75F7 /* Localizable.strings */,
 				4697635F1F3DB602008D45CF /* nightfall.svg */,
 				469763601F3DB602008D45CF /* sun_cloudy.svg */,
 				4697635D1F3DB577008D45CF /* sun.svg */,
@@ -206,6 +226,7 @@
 				469763621F3DB602008D45CF /* sun_cloudy.svg in Resources */,
 				469763521F3DB205008D45CF /* Assets.xcassets in Resources */,
 				469763501F3DB205008D45CF /* Main.storyboard in Resources */,
+				4658387E287ADC80003B75F7 /* Localizable.strings in Resources */,
 				469763611F3DB602008D45CF /* nightfall.svg in Resources */,
 				465E30001F489FC200019605 /* sunrise.svg in Resources */,
 				4697635E1F3DB577008D45CF /* sun.svg in Resources */,
@@ -241,13 +262,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Weather/Pods-Weather-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 			);
@@ -268,8 +287,11 @@
 				465B1EB61F4759AA00A3A7EF /* WeatherCell.swift in Sources */,
 				4697636D1F3DC5E4008D45CF /* WeatherConfigurator.swift in Sources */,
 				469763651F3DB9B2008D45CF /* WeatherController.swift in Sources */,
+				46583885287AE45D003B75F7 /* UIColor+Utils.swift in Sources */,
 				4658387C287AD627003B75F7 /* GetWeather.swift in Sources */,
+				46583881287AE0C4003B75F7 /* String+Color.swift in Sources */,
 				469763691F3DC20E008D45CF /* Weather.swift in Sources */,
+				46583883287AE1C2003B75F7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

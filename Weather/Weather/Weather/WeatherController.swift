@@ -1,6 +1,5 @@
 
 import UIKit
-import DynamicColor
 import Macaw
 
 protocol WeatherControllerInput: AnyObject {
@@ -16,13 +15,13 @@ class WeatherController: UIViewController, WeatherControllerInput {
     
     var output: WeatherControllerOutput!
     
-    @IBOutlet weak var mainIconView: SVGView!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var weatherStatusLabel: UILabel!
-    @IBOutlet weak var conditionsLabel: UILabel!
-    @IBOutlet weak var hoursTableView: UITableView!
-    @IBOutlet weak var tempBubbleView: UIView!
+    @IBOutlet private weak var mainIconView: SVGView!
+    @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var weatherStatusLabel: UILabel!
+    @IBOutlet private weak var conditionsLabel: UILabel!
+    @IBOutlet private weak var hoursTableView: UITableView!
+    @IBOutlet private weak var tempBubbleView: UIView!
     
     fileprivate var gradientLayer: CAGradientLayer?
     fileprivate var weather: Weather.ViewModel?
@@ -46,15 +45,8 @@ class WeatherController: UIViewController, WeatherControllerInput {
         output.loadWeather(request: request)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-    }
-    
     func showWeather(weather: Weather.ViewModel) {
-        
         self.weather = weather
-        
         configureDesign(weather: weather)
         hoursTableView.reloadData()
     }
@@ -93,9 +85,9 @@ extension WeatherController {
         mainIconView.fileName = "moon"
         
         // Gradient
-        let startColor = UIColor(hexString: "383D87")
-        let midColor = UIColor(hexString: "5F4E96")
-        let endColor = UIColor(hexString: "D48CB4")
+        let startColor = Constants.ColorNames.nightBgGradient.color
+        let midColor = Constants.ColorNames.midBgGradient.color
+        let endColor = Constants.ColorNames.sunnyBgGradient.color
         
         gradientLayer?.colors = [startColor.cgColor, midColor.cgColor, endColor.cgColor]
         gradientLayer?.locations = [0.0, 0.45, 0.75]
@@ -110,9 +102,9 @@ extension WeatherController {
         mainIconView.fileName = "sun"
         
         // Gradient
-        let startColor = UIColor(hexString: "D48CB4")
-        let midColor = UIColor(hexString: "5F4E96")
-        let endColor = UIColor(hexString: "383D87")
+        let startColor = Constants.ColorNames.sunnyBgGradient.color
+        let midColor = Constants.ColorNames.midBgGradient.color
+        let endColor = Constants.ColorNames.nightBgGradient.color
         
         gradientLayer?.colors = [startColor.cgColor, startColor.cgColor, midColor.cgColor, endColor.cgColor]
         gradientLayer?.locations = [0.0, 0.3, 0.75, 0.9]
@@ -126,13 +118,8 @@ extension WeatherController {
 extension WeatherController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if let cell = cell as? OnScroll {
-//            cell.onScrollTo(offset: tableView.contentOffset, intoDisplay: hoursTableView.frame, inset: hoursTableView.contentInset)
-//        }
-        
-        if let cell = cell as? OnScroll {
-            cell.willDisplay(offset: tableView.contentOffset, intoDisplay: tableView.frame, inset: tableView.contentInset)
-        }
+        guard let cell = cell as? OnScroll else { return }
+        cell.willDisplay(offset: tableView.contentOffset, intoDisplay: tableView.frame, inset: tableView.contentInset)
     }
     
 }
@@ -154,7 +141,6 @@ extension WeatherController: UITableViewDataSource {
         }
         return cell
     }
-    
 }
 
 extension WeatherController: UIScrollViewDelegate {

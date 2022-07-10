@@ -1,24 +1,20 @@
 PODS:
-  - DynamicColor (4.2.0)
   - Macaw (0.9.10):
     - SWXMLHash
   - SWXMLHash (7.0.0)
 
 DEPENDENCIES:
-  - DynamicColor
   - Macaw (= 0.9.10)
 
 SPEC REPOS:
   trunk:
-    - DynamicColor
     - Macaw
     - SWXMLHash
 
 SPEC CHECKSUMS:
-  DynamicColor: c475f66bda1cabf602f2c54ac1171c0c07148a5a
   Macaw: 7af8ea57aa2cab35b4a52a45e6f85eea753ea9ae
   SWXMLHash: cf8682ebf12f124e77554d6a5f9170830626d99e
 
-PODFILE CHECKSUM: ccb8432bfc4678d6ed7ea1563982b45e88c509c5
+PODFILE CHECKSUM: 6f90499d9ba16a283d171dedeb17ca68ce15b7c6
 
 COCOAPODS: 1.11.3

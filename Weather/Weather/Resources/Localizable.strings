@@ -1,0 +1,15 @@
+
+"weather.state.sun" = "Soleado";                    // sun.max.fill
+"weather.state.sunandclouds" = "Nubes y claros";    // cloud.sun.fill
+"weather.state.cloud" = "Nublado";                  // cloud.fill
+"weather.state.sundust" = "Calima";                 // sun.dust.fill
+"weather.state.fog" = "Niebla";                     // cloud.fog.fill
+"weather.state.littlerain" = "Chubascos";           // cloud.drizzle.fill
+"weather.state.rain" = "Lluvioso";                  // cloud.rain.fill
+"weather.state.heavyrain" = "Muy lluvioso";         // cloud.heavyrain.fill
+"weather.state.storm" = "Tormentoso";               // cloud.bolt.fill
+"weather.state.stormrain" = "Tormentoso";           // cloud.bolt.rain.fill
+"weather.state.hail" = "Granizo";                   // cloud.hail.fill
+"weather.state.snow" = "Nevado";                    // cloud.snow.fill
+"weather.state.wind" = "Ventoso";                   // wind
+"weather.state.hurricane" = "Huracanado";           // hurricane
