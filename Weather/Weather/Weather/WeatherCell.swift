@@ -11,19 +11,17 @@ import Macaw
 
 class WeatherCell: UITableViewCell {
     
-    fileprivate let animationDuration: TimeInterval = 0.2
-    fileprivate let animationCurve = UIViewAnimationCurve.easeInOut
+    private let animationDuration: TimeInterval = 0.2
+    private let animationCurve: UIView.AnimationCurve = .easeInOut
     
-    @IBOutlet weak var hourLabel: UILabel!
-    @IBOutlet weak var iconView: SVGView!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var sentenceLabel: UILabel!
+    @IBOutlet private weak var hourLabel: UILabel!
+    @IBOutlet private weak var iconView: SVGView!
+    @IBOutlet private weak var statusLabel: UILabel!
+    @IBOutlet private weak var temperatureLabel: UILabel!
+    @IBOutlet private weak var sentenceLabel: UILabel!
     
     func show (weather: Weather.ViewModel.WeatherHourItem) {
-        
         configure(weather: weather)
-        
         hourLabel.text = weather.hour
         iconView.fileName = weather.iconName
         statusLabel.text = weather.status
@@ -32,20 +30,16 @@ class WeatherCell: UITableViewCell {
     }
     
     private func configure(weather: Weather.ViewModel.WeatherHourItem) {
-        
         if weather.isFirst {
             hourLabel.textColor = UIColor.white
         } else {
             hourLabel.textColor = UIColor.white.withAlphaComponent(0.5)
         }
-        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         resetViewTransformations()
-        
         hourLabel.text = nil
 //        iconView.fileName = nil
         statusLabel.text = nil
@@ -222,7 +216,7 @@ fileprivate extension UIView {
         case outsideScreen
     }
     
-    fileprivate var state: AnimationState {
+    var state: AnimationState {
         get {
             let value = objc_getAssociatedObject(self, &associatedStateHandle) as? AnimationState
             return value ?? .inScreen
@@ -233,7 +227,7 @@ fileprivate extension UIView {
         }
     }
     
-    fileprivate var animation: UIViewPropertyAnimator? {
+    var animation: UIViewPropertyAnimator? {
         get {
             return objc_getAssociatedObject(self, &associatedAnimationHandle) as? UIViewPropertyAnimator
         }

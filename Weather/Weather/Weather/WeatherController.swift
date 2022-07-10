@@ -48,7 +48,7 @@ class WeatherController: UIViewController, WeatherControllerInput {
         tempBubbleView.clipsToBounds = true
         
         hoursTableView.estimatedRowHeight = 92
-        hoursTableView.rowHeight = UITableViewAutomaticDimension
+        hoursTableView.rowHeight = UITableView.automaticDimension
         
         tableViewTopInset = abs(tableViewToTopOfConstraint.constant)
         hoursTableView.contentInset = UIEdgeInsets(top: tableViewTopInset, left: 0.0, bottom: 0.0, right: 0.0)
