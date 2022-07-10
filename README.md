@@ -6,7 +6,7 @@ A swift controller to display the weather
 
 ## Requirements
 
-iOs 10
+iOs 13
 
 ## Installation and Usage
 
@@ -22,32 +22,7 @@ After that execute "cmd+R" to run the project.
 
 ## Developer notes
 
-* The datas are hardcoded into WeatherPresenter. If you want to connect to real service implements the connection and parser from this layer (use of separated domain layer is recommended).
-* To avoid the lagging when user scroll the tableview we replace the following lines of code into the class SVGView of Macaw library:
-```swift
-@IBInspectable open var fileName: String? {
-        didSet {
-            parseSVG()
-            render()
-        }
-    }
-```
-with these new ones:
-```swift
-@IBInspectable open var fileName: String? {
-        didSet {
-            DispatchQueue.global(qos: .background).async {
-                self.parseSVG()
-                DispatchQueue.main.async {
-                    self.render()
-                }
-            }
-        }
-    }
-```
-This code implements the parse of the svg into a secondary thread to improve UI performance
-
-**IMPORTANT**: We detect a crash when we execute this perform at iPhoneX with iOs 11 so avoid to use it until we find the reason for this crash :).
+* The datas are hardcoded into GetWeather business class. If you want to connect to real service implements the connection and parser from this layer (use of separated domain layer is recommended).
 
 ## Thanks
 

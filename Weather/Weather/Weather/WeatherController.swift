@@ -1,6 +1,5 @@
 
 import UIKit
-import Macaw
 
 protocol WeatherControllerInput: AnyObject {
     func showError(message: String)
@@ -15,7 +14,7 @@ class WeatherController: UIViewController, WeatherControllerInput {
     
     var output: WeatherControllerOutput!
     
-    @IBOutlet private weak var mainIconView: SVGView!
+    @IBOutlet private weak var mainIconView: UIImageView!
     @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var weatherStatusLabel: UILabel!
@@ -32,6 +31,7 @@ class WeatherController: UIViewController, WeatherControllerInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainIconView.tintColor = .white
         tempBubbleView.layer.cornerRadius = tempBubbleView.frame.size.width / 2.0
         tempBubbleView.clipsToBounds = true
         
@@ -82,7 +82,7 @@ extension WeatherController {
     private func dark() {
         
         // Main icon
-        mainIconView.fileName = "moon"
+        mainIconView.image = UIImage(systemName: Constants.WeatherIcons.Moon.stars)
         
         // Gradient
         let startColor = Constants.ColorNames.nightBgGradient.color
@@ -99,7 +99,7 @@ extension WeatherController {
     private func light() {
         
         // Main icon
-        mainIconView.fileName = "sun"
+        mainIconView.image = UIImage(systemName: Constants.WeatherIcons.Sunny.clear)
         
         // Gradient
         let startColor = Constants.ColorNames.sunnyBgGradient.color

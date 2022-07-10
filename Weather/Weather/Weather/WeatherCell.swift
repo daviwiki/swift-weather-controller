@@ -1,6 +1,5 @@
 
 import UIKit
-import Macaw
 
 class WeatherCell: UITableViewCell {
     
@@ -8,15 +7,15 @@ class WeatherCell: UITableViewCell {
     private let animationCurve: UIView.AnimationCurve = .easeInOut
     
     @IBOutlet private weak var hourLabel: UILabel!
-    @IBOutlet private weak var iconView: SVGView!
+    @IBOutlet private weak var iconView: UIImageView!
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var temperatureLabel: UILabel!
     @IBOutlet private weak var sentenceLabel: UILabel!
     
-    func show (weather: Weather.ViewModel.WeatherHourItem) {
+    func show(weather: Weather.ViewModel.WeatherHourItem) {
         configure(weather: weather)
         hourLabel.text = weather.hour
-        iconView.fileName = weather.iconName
+        iconView.image = UIImage(systemName: weather.iconName)
         statusLabel.text = weather.status
         temperatureLabel.text = weather.temperature
         sentenceLabel.text = weather.sentence
@@ -41,7 +40,7 @@ class WeatherCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        iconView.tintColor = .white
         temperatureLabel.textColor = Constants.ColorNames.secondaryTextColor.color
         sentenceLabel.textColor = Constants.ColorNames.secondaryTextColor.color
     }

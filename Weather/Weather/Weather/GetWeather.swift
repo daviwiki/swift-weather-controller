@@ -27,31 +27,31 @@ private extension GetWeatherDefault {
                 
         let item = Weather.ViewModel.WeatherHourItem(isFirst: true,
                                                      hour: "20:00",
-                                                     iconName: "sun",
+                                                     iconName: Constants.WeatherIcons.Sunny.clear,
                                                      status: "Soleado",
                                                      temperature: "21ºC",
                                                      sentence: "Una tarde perfecta para ir a la playa")
         let item2 = Weather.ViewModel.WeatherHourItem(isFirst: false,
                                                       hour: "21:00",
-                                                      iconName: "sun",
+                                                      iconName: Constants.WeatherIcons.Sunny.clear,
                                                       status: "Soleado",
                                                       temperature: "20ºC",
                                                       sentence: "Aprovecha estas últimas horas del día")
         let item3 = Weather.ViewModel.WeatherHourItem(isFirst: false,
                                                       hour: "22:12",
-                                                      iconName: "nightfall",
+                                                      iconName: Constants.WeatherIcons.sunset,
                                                       status: "Anochece",
                                                       temperature: "18ºC",
                                                       sentence: "Podrías hacer una foto bonita al atardecer")
         let item4 = Weather.ViewModel.WeatherHourItem(isFirst: false,
                                                       hour: "23:00",
-                                                      iconName: "moon_cloudy",
+                                                      iconName: Constants.WeatherIcons.Moon.cloudy,
                                                       status: "Algunas nubes",
                                                       temperature: "14ºC",
                                                       sentence: "Va a refrescar ... ¡Abrigate bien!")
         let item5 = Weather.ViewModel.WeatherHourItem(isFirst: false,
                                                       hour: "00:00",
-                                                      iconName: "moon",
+                                                      iconName: Constants.WeatherIcons.Moon.clear,
                                                       status: "Despejado",
                                                       temperature: "15ºC",
                                                       sentence: "Noche de perseidas, ¡Sal a admirar el cielo!")
