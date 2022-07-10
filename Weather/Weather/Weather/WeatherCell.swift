@@ -1,10 +1,3 @@
-//
-//  WeatherCell.swift
-//  Weather
-//
-//  Created by David Martinez on 18/08/2017.
-//  Copyright © 2017 atenea. All rights reserved.
-//
 
 import UIKit
 import Macaw
@@ -132,7 +125,7 @@ extension WeatherCell {
         case toRight
     }
     
-    fileprivate func resetViewTransformations() {
+    private func resetViewTransformations() {
         iconView.transform = CGAffineTransform.identity
         
         hourLabel.transform = CGAffineTransform.identity
@@ -147,19 +140,19 @@ extension WeatherCell {
         sentenceLabel.alpha = 1.0
     }
     
-    fileprivate func animateHourFor(cellVisibility percent: CGFloat) {
+    private func animateHourFor(cellVisibility percent: CGFloat) {
         animate(hourLabel, cellVisibility: percent, visibilityLimit: 0.7, direction: .toLeft)
     }
     
-    fileprivate func animateStatusBarFor(cellVisibility percent: CGFloat) {
+    private func animateStatusBarFor(cellVisibility percent: CGFloat) {
         animate(statusLabel, cellVisibility: percent, visibilityLimit: 0.7)
     }
     
-    fileprivate func animateTemperatureFor(cellVisibility percent: CGFloat) {
+    private func animateTemperatureFor(cellVisibility percent: CGFloat) {
         animate(temperatureLabel, cellVisibility: percent, visibilityLimit: 0.55)
     }
     
-    fileprivate func animateMessageFor(cellVisibility percent: CGFloat) {
+    private func animateMessageFor(cellVisibility percent: CGFloat) {
         animate(sentenceLabel, cellVisibility: percent, visibilityLimit: 0.35)
     }
     

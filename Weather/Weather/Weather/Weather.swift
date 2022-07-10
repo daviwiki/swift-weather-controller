@@ -1,10 +1,3 @@
-//
-//  Weather.swift
-//  Weather
-//
-//  Created by David Martinez on 11/08/2017.
-//  Copyright © 2017 atenea. All rights reserved.
-//
 
 import Foundation
 

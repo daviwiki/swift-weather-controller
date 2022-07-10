@@ -1,26 +1,15 @@
-//
-//  WeatherController.swift
-//  Weather
-//
-//  Created by David Martinez on 11/08/2017.
-//  Copyright © 2017 atenea. All rights reserved.
-//
 
 import UIKit
 import DynamicColor
 import Macaw
 
-protocol WeatherControllerInput: NSObjectProtocol {
-    
+protocol WeatherControllerInput: AnyObject {
     func showError(message: String)
     func showWeather(weather: Weather.ViewModel)
-    
 }
 
-protocol WeatherControllerOutput: NSObjectProtocol {
-    
+protocol WeatherControllerOutput: AnyObject {
     func loadWeather(request: Weather.Request)
-    
 }
 
 class WeatherController: UIViewController, WeatherControllerInput {
