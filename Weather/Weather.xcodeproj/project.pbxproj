@@ -13,16 +13,10 @@
 		46583883287AE1C2003B75F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46583882287AE1C2003B75F7 /* Constants.swift */; };
 		46583885287AE45D003B75F7 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46583884287AE45D003B75F7 /* UIColor+Utils.swift */; };
 		465B1EB61F4759AA00A3A7EF /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465B1EB51F4759AA00A3A7EF /* WeatherCell.swift */; };
-		465E30001F489FC200019605 /* sunrise.svg in Resources */ = {isa = PBXBuildFile; fileRef = 465E2FFF1F489FC200019605 /* sunrise.svg */; };
-		465E30021F489FF600019605 /* moon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 465E30011F489FF600019605 /* moon.svg */; };
-		465E30041F48A00100019605 /* moon_cloudy.svg in Resources */ = {isa = PBXBuildFile; fileRef = 465E30031F48A00100019605 /* moon_cloudy.svg */; };
 		4697634B1F3DB205008D45CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4697634A1F3DB205008D45CF /* AppDelegate.swift */; };
 		469763501F3DB205008D45CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4697634E1F3DB205008D45CF /* Main.storyboard */; };
 		469763521F3DB205008D45CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469763511F3DB205008D45CF /* Assets.xcassets */; };
 		469763551F3DB205008D45CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469763531F3DB205008D45CF /* LaunchScreen.storyboard */; };
-		4697635E1F3DB577008D45CF /* sun.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4697635D1F3DB577008D45CF /* sun.svg */; };
-		469763611F3DB602008D45CF /* nightfall.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4697635F1F3DB602008D45CF /* nightfall.svg */; };
-		469763621F3DB602008D45CF /* sun_cloudy.svg in Resources */ = {isa = PBXBuildFile; fileRef = 469763601F3DB602008D45CF /* sun_cloudy.svg */; };
 		469763651F3DB9B2008D45CF /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469763641F3DB9B2008D45CF /* WeatherController.swift */; };
 		469763671F3DC1AD008D45CF /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469763661F3DC1AD008D45CF /* WeatherPresenter.swift */; };
 		469763691F3DC20E008D45CF /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469763681F3DC20E008D45CF /* Weather.swift */; };
@@ -38,18 +32,12 @@
 		46583882287AE1C2003B75F7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		46583884287AE45D003B75F7 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		465B1EB51F4759AA00A3A7EF /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
-		465E2FFF1F489FC200019605 /* sunrise.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sunrise.svg; sourceTree = "<group>"; };
-		465E30011F489FF600019605 /* moon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moon.svg; sourceTree = "<group>"; };
-		465E30031F48A00100019605 /* moon_cloudy.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moon_cloudy.svg; sourceTree = "<group>"; };
 		469763471F3DB205008D45CF /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4697634A1F3DB205008D45CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4697634F1F3DB205008D45CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		469763511F3DB205008D45CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		469763541F3DB205008D45CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		469763561F3DB205008D45CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4697635D1F3DB577008D45CF /* sun.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sun.svg; sourceTree = "<group>"; };
-		4697635F1F3DB602008D45CF /* nightfall.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nightfall.svg; sourceTree = "<group>"; };
-		469763601F3DB602008D45CF /* sun_cloudy.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sun_cloudy.svg; sourceTree = "<group>"; };
 		469763641F3DB9B2008D45CF /* WeatherController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		469763661F3DC1AD008D45CF /* WeatherPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
 		469763681F3DC20E008D45CF /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -117,12 +105,6 @@
 			children = (
 				469763511F3DB205008D45CF /* Assets.xcassets */,
 				4658387D287ADC80003B75F7 /* Localizable.strings */,
-				4697635F1F3DB602008D45CF /* nightfall.svg */,
-				469763601F3DB602008D45CF /* sun_cloudy.svg */,
-				4697635D1F3DB577008D45CF /* sun.svg */,
-				465E2FFF1F489FC200019605 /* sunrise.svg */,
-				465E30011F489FF600019605 /* moon.svg */,
-				465E30031F48A00100019605 /* moon_cloudy.svg */,
 			);
 			name = Resoruces;
 			path = Resources;
@@ -221,15 +203,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				469763551F3DB205008D45CF /* LaunchScreen.storyboard in Resources */,
-				465E30041F48A00100019605 /* moon_cloudy.svg in Resources */,
-				469763621F3DB602008D45CF /* sun_cloudy.svg in Resources */,
 				469763521F3DB205008D45CF /* Assets.xcassets in Resources */,
 				469763501F3DB205008D45CF /* Main.storyboard in Resources */,
 				4658387E287ADC80003B75F7 /* Localizable.strings in Resources */,
-				469763611F3DB602008D45CF /* nightfall.svg in Resources */,
-				465E30001F489FC200019605 /* sunrise.svg in Resources */,
-				4697635E1F3DB577008D45CF /* sun.svg in Resources */,
-				465E30021F489FF600019605 /* moon.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
