@@ -53,12 +53,12 @@ protocol OnScroll {
 
 extension WeatherCell: OnScroll {
     
-    func onScrollTo(offset: CGPoint, intoDisplay frame: CGRect, inset: UIEdgeInsets) {
+    func onScrollTo(offset: CGPoint, intoDisplay scrollViewFrame: CGRect, inset: UIEdgeInsets) {
         
         let y = offset.y
-        let h = frame.height
-        let cellY = self.frame.origin.y
-        let cellH = self.frame.height
+        let h = scrollViewFrame.height
+        let cellY = frame.origin.y
+        let cellH = frame.height
         
         if y + inset.top >= cellY {
             // up cell
@@ -66,11 +66,7 @@ extension WeatherCell: OnScroll {
             contentView.alpha = percentVisible
             iconView.transform = CGAffineTransform(scaleX: percentVisible, y: percentVisible)
             
-            animateStatusBarFor(cellVisibility: percentVisible)
-            animateTemperatureFor(cellVisibility: percentVisible)
-            animateMessageFor(cellVisibility: percentVisible)
-            animateHourFor(cellVisibility: percentVisible)
-            
+            animateItems(percentVisible: percentVisible)
         } else if cellY > y + h - cellH {
             // down cell
             let percentVisible = (y + h - cellY) / cellH
@@ -82,7 +78,7 @@ extension WeatherCell: OnScroll {
         }
     }
     
-    func willDisplay(offset: CGPoint, intoDisplay frame: CGRect, inset: UIEdgeInsets) {
+    func willDisplay(offset: CGPoint, intoDisplay scrollViewFrame: CGRect, inset: UIEdgeInsets) {
         
         let cellY = self.frame.origin.y
         
@@ -95,10 +91,10 @@ extension WeatherCell: OnScroll {
             temperatureLabel.alpha = 0.0
             sentenceLabel.alpha = 0.0
             
-            hourLabel.transform = CGAffineTransform(translationX: -1 * self.frame.width, y: 0.0)
-            statusLabel.transform = CGAffineTransform(translationX: self.frame.width, y: 0.0)
-            temperatureLabel.transform = CGAffineTransform(translationX: self.frame.width, y: 0.0)
-            sentenceLabel.transform = CGAffineTransform(translationX: self.frame.width, y: 0.0)
+            hourLabel.transform = CGAffineTransform(translationX: -1 * frame.width, y: 0.0)
+            statusLabel.transform = CGAffineTransform(translationX: frame.width, y: 0.0)
+            temperatureLabel.transform = CGAffineTransform(translationX: frame.width, y: 0.0)
+            sentenceLabel.transform = CGAffineTransform(translationX: frame.width, y: 0.0)
             
         } else {
             
@@ -116,11 +112,11 @@ extension WeatherCell: OnScroll {
     }
 }
 
-extension WeatherCell {
+private extension WeatherCell {
     
     enum Direction {
-        case toLeft
-        case toRight
+        case left
+        case right
     }
     
     private func resetViewTransformations() {
@@ -138,8 +134,15 @@ extension WeatherCell {
         sentenceLabel.alpha = 1.0
     }
     
+    private func animateItems(percentVisible: CGFloat) {
+        animateStatusBarFor(cellVisibility: percentVisible)
+        animateTemperatureFor(cellVisibility: percentVisible)
+        animateMessageFor(cellVisibility: percentVisible)
+        animateHourFor(cellVisibility: percentVisible)
+    }
+    
     private func animateHourFor(cellVisibility percent: CGFloat) {
-        animate(hourLabel, cellVisibility: percent, visibilityLimit: 0.7, direction: .toLeft)
+        animate(hourLabel, cellVisibility: percent, visibilityLimit: 0.7, direction: .left)
     }
     
     private func animateStatusBarFor(cellVisibility percent: CGFloat) {
@@ -154,7 +157,7 @@ extension WeatherCell {
         animate(sentenceLabel, cellVisibility: percent, visibilityLimit: 0.35)
     }
     
-    private func animate(_ view: UIView, cellVisibility percent: CGFloat, visibilityLimit threshold: CGFloat, direction: Direction = .toRight) {
+    private func animate(_ view: UIView, cellVisibility percent: CGFloat, visibilityLimit threshold: CGFloat, direction: Direction = .right) {
         let mustAppear = percent > threshold
         
         if mustAppear {
@@ -164,29 +167,29 @@ extension WeatherCell {
         }
     }
     
-    private func applyFlyOutAnimation(of view: UIView, direction: Direction = .toRight) {
+    private func applyFlyOutAnimation(of view: UIView, direction: Direction = .right) {
         
         guard view.state == .inScreen else { return }
         view.state = .outsideScreen
         view.animation?.stopAnimation(false)
-        view.animation?.finishAnimation(at: UIViewAnimatingPosition.end)
+        view.animation?.finishAnimation(at: .end)
         view.animation = UIViewPropertyAnimator(duration: animationDuration, curve: animationCurve, animations: nil)
         
         view.animation?.addAnimations { [unowned self] in
             view.alpha = 0.0
-            let translationX = (direction == .toRight) ? self.frame.width : -1 * self.frame.width;
+            let translationX = (direction == .right) ? frame.width : -1 * frame.width;
             view.transform = CGAffineTransform(translationX: translationX, y: 0.0)
         }
         
         view.animation?.startAnimation()
     }
     
-    private func applyFlyInAnimation(of view: UIView, direction: Direction = .toRight) {
+    private func applyFlyInAnimation(of view: UIView, direction: Direction = .right) {
         
         guard view.state == .outsideScreen else { return }
         view.state = .inScreen
         view.animation?.stopAnimation(false)
-        view.animation?.finishAnimation(at: UIViewAnimatingPosition.end)
+        view.animation?.finishAnimation(at: .end)
         
         view.animation = UIViewPropertyAnimator(duration: animationDuration, dampingRatio: 0.8) {
             view.alpha = 1.0

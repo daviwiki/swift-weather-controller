@@ -22,11 +22,11 @@ class WeatherController: UIViewController, WeatherControllerInput {
     @IBOutlet private weak var hoursTableView: UITableView!
     @IBOutlet private weak var tempBubbleView: UIView!
     
-    fileprivate var gradientLayer: CAGradientLayer?
-    fileprivate var weather: Weather.ViewModel?
+    private var gradientLayer: CAGradientLayer?
+    private var weather: Weather.ViewModel?
     
     @IBOutlet weak var tableViewToTopOfConstraint: NSLayoutConstraint!
-    fileprivate var tableViewTopInset: CGFloat = 0.0
+    private var tableViewTopInset: CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,11 +162,11 @@ extension WeatherController: UIScrollViewDelegate {
     }
     
     private func applyScrollTransform(at offset: CGPoint) {
-        let visibleCells = hoursTableView.visibleCells
-        for cell in visibleCells {
-            if let cell = cell as? OnScroll {
+        hoursTableView
+            .visibleCells
+            .compactMap({ $0 as? OnScroll })
+            .forEach { cell in
                 cell.onScrollTo(offset: offset, intoDisplay: hoursTableView.frame, inset: hoursTableView.contentInset)
             }
-        }
     }
 }
